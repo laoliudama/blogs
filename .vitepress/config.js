@@ -1,7 +1,8 @@
 // .vitepress/config.js
 import { getSiderbar } from './pageHelper.js'
-console.log(JSON.stringify(getSiderbar()))
+
 export default {
+  base: process.env.VITE_ASSETS,
   title: '老刘打码',
   description: '记录老刘的开发经验',
   themeConfig: {

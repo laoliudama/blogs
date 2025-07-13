@@ -1,11 +1,14 @@
 import path from "path"
 import fs from 'fs'
 // 获取项目的文档（本项目的文档都存放在根目录下的pages文件夹下。最多2级目录）
+
+const isProd = process.env.NODE_ENV === 'production' ? '/blogs' : ''
+
 export function getSiderbar() {
   const rootDir = path.resolve('pages')
-  return readdirSync(rootDir,'pages')
+  return readdirSync(rootDir, 'pages')
 }
-  
+
 /**
  * 递归地读取指定路径下的所有文件和文件夹，生成侧边栏数据结构
  * 该函数旨在为一个目录路径提供一个快捷方式，以自动构建一个包含所有子项（文件和文件夹）的数组
@@ -27,16 +30,16 @@ function readdirSync(fpath, prefix = '') {
     // 检查当前项是否为文件夹
     if (isDirectory(filePath)) {
       // 如果是文件夹，则递归调用readdirSync函数，并将结果作为子项添加到侧边栏数组中
-      
+
       sidebar.push({
         text: file,
-        items: readdirSync(filePath,[prefix, path.basename(filePath)].filter(item => item.trim() !== '').join('/'))
+        items: readdirSync(filePath, [prefix, path.basename(filePath)].filter(item => item.trim() !== '').join('/'))
       })
     } else if (file.endsWith('.md')) {
       // 如果是Markdown文件，则将其添加到侧边栏数组中，并生成相应的链接
       sidebar.push({
         text: file.replace('.md', ''),
-        link: `${prefix ?  '/'+prefix : ''}/${file}`.replace(/\.md$/, '.html')
+        link: `${isProd}${prefix ? '/' + prefix : ''}/${file}`.replace(/\.md$/, '.html')
       })
     }
   })
