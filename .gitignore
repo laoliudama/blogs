@@ -1,0 +1,15 @@
+.vitrpress
+*node_modules
+*.log
+*.lock
+*.map
+*.min.js
+*.min.css
+*.min.html
+*.min.css.map
+*.min.js.map
+*.min.css.LICENSE.txt
+*.min.css.map.LICENSE.txt
+*.min.js.LICENSE.txt
+*.min.js.map.LICENSE.txt
+*.min.css.map.LICENSE.txt
