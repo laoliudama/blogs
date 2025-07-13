@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "type": "module",
+  "scripts": {
+    "docs:dev": "npx vitepress dev --host 0.0.0.0",
+    "docs:build": "npx vitepress build",
+    "docs:preview": "npx vitepress preview"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.89.2"
+  }
+}

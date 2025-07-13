@@ -1,0 +1,128 @@
+<template>
+  <div class="home">
+    <Header class="header"/>
+    <div class="main-content">
+      <div class="know-me">
+        <!-- 介绍自己 -->
+        <Intro class="intro" />
+
+        <div class="contact-social-media">
+          <!-- 联系方式 -->
+          <Contact />
+          <!-- 自媒体 -->
+          <SocialMedia class="social-media"/>
+        </div>
+      </div>
+
+      <Services class="services" />
+      <TechnologyStack class="technology-stack" />
+      <ToolAndTech class="tool-and-tech"/>
+      <Footer class="footer"/>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+import Contact from "../components/Contact.vue";
+import SocialMedia from "../components/SocialMedia.vue";
+import Intro from "../components/Intro.vue";
+import Services from "../components/Services.vue";
+import TechnologyStack from "../components/TechnologyStack.vue";
+import ToolAndTech from "../components/ToolAndTech.vue";
+</script>
+
+<style scoped lang="scss">
+.home {
+  height: 100vh;
+  background: #121829;
+  min-width: 1024px;
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1025;
+  }
+}
+
+.know-me {
+  display: flex;
+  background-image: linear-gradient(to right, #121829, #291f4a, #121829);
+  padding: 48px 0; 
+  .intro {
+    flex: 1;
+  }
+
+  .contact-social-media {
+    flex: 1;
+    padding-right: 32px;
+  }
+}
+
+.services,.technology-stack {
+  margin-top: 99px;
+}
+
+.tool-and-tech {
+  margin-top: 64px;
+}
+.main-content{
+  flex: 1;
+  color: white;
+  padding-top: 73px;
+  overflow-y: scroll;
+  max-height: 100%;
+  .social-media {
+    margin-top: 32px;
+  }
+   /* Custom Scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Color of the track */
+    border-radius: 4px; /* Rounded corners for the track */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #9973f8; /* Color of the thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #b18cd1; /* Color of the thumb on hover */
+  }
+  &::before {
+    content: "老  刘  在  打  码";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 64px;
+    font-weight: bold;
+    color: rgba(153, 115, 248, 0.08); /* Transparent purple */
+    pointer-events: none; /* Make sure it doesn't interfere with interactions */
+    z-index: 0; /* Keep it behind content */
+    user-select: none;
+    white-space: pre-wrap;
+    text-align: center;
+    mix-blend-mode: screen;
+  }
+
+}
+
+.contact-section,
+.social-media-section,
+.services-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer{
+  margin-top: 0;
+}
+/* Add more specific styles for each section */
+</style>
