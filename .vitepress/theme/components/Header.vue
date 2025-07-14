@@ -19,8 +19,9 @@
 </template>
 
 <script setup>
+const base = import.meta.env.VITE_ASSETS
 function toAtricle() {
-  window.location.href = import.meta.env.VITE_ASSETS + "/pages/main.html"
+  window.location.href = base + "/pages/main.html"
 }
 </script>
 
