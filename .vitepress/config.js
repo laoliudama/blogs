@@ -2,7 +2,7 @@
 import { getSiderbar } from './pageHelper.js'
 
 export default {
-  base: process.env.VITE_ASSETS,
+  base: process.env.NODE_ENV === 'production' ? '/blogs/' : '/',
   title: '老刘打码',
   description: '记录老刘的开发经验',
   themeConfig: {
