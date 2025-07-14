@@ -20,7 +20,7 @@
 
 <script setup>
 function toAtricle() {
-  window.location.href = (import.meta.env.mode === 'production' ? "/blogs" : "") + "/pages/main.html"
+  window.location.href = import.meta.env.VITE_ASSETS + "/pages/main.html"
 }
 </script>
 
