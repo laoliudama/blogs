@@ -13,3 +13,4 @@
 *.min.js.LICENSE.txt
 *.min.js.map.LICENSE.txt
 *.min.css.map.LICENSE.txt
+*dist
