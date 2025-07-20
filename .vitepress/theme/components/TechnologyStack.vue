@@ -86,4 +86,21 @@ const technologyStack = ref([
     }
   }
 }
+
+@media screen and (max-width: 520px) {
+  .technology-stack {
+    .technology-stack-title {
+      .icon-a-jishujishuzhongtai {
+        font-size: 28px !important;
+      }
+      .title {
+        font-size: 28px;
+      }
+    }
+    .technology-stack-desc {
+      font-size: 20px;
+      padding: 0 16px;
+    }
+  }
+}
 </style>

@@ -38,7 +38,7 @@ const services = ref([
     title: '移动端',
     skills: 'uniappx + uts/react-native，多终端设备开发',
     apps: ['iOS', '安卓', '鸿蒙'],
-    icon: 'iconfont icon-yidongduan',
+    icon: 'iconfont icon-mobile_application',
   },
   {
     title: '桌面应用',
@@ -143,6 +143,35 @@ const services = ref([
     .service-card:hover {
       transform: scale(1.1);
       border: 1px solid #9973f8;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .services {
+    .services-title {
+      font-size: 28px;
+      .icon-coding {
+        font-size: 28px !important;
+      }
+    }
+    
+    .services-desc {
+      margin: 28px 16px;
+      font-size: 18px;
+    }
+
+    .service-cards {
+      margin-top: 20px;
+      flex-direction: column;
+      .service-card {
+        max-width: unset;
+        padding: 12px 20px;
+        margin: 0 20px;
+      }
+      .service-card:hover {
+        transform: scale(1);
+      }
     }
   }
 }

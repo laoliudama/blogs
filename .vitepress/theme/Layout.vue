@@ -24,12 +24,16 @@ const { page } = pageData
 </script>
 
 <style scoped lang="scss">
+:root {
+  --screen-max-width: 520px;
+}
+
 .home__page { 
   background: #f5f5f5;
   position: absolute;
   top: 0;
   left: 0;
-  height:100vh;
+  height:100vh; 
   width:100vw;
   display:flex;
   flex-direction: column;

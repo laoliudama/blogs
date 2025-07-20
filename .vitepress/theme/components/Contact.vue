@@ -66,7 +66,7 @@ const contactItems = ref([
     font-size: 28px;
     font-weight: bold;
     color: #ccc;
-
+    margin-top: 32px;
   }
 }
 
@@ -102,5 +102,31 @@ const contactItems = ref([
 .contact-item span {
   display: block;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .contact-section {
+    position: relative;
+
+    .content-title {
+      font-size: 20px;
+      line-height: normal;
+    }
+  }
+
+  .contact-items {
+    display: flex;
+    column-gap: 2px;
+    row-gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .contact-item {
+      margin: 0 0px;
+      width:45%;
+    }
+    .contact-item p {
+      font-size: 15px;
+    }
+  }
 }
 </style>

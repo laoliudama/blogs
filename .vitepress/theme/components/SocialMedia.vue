@@ -77,4 +77,17 @@ onMounted(() => {
   display: block;
   margin-bottom: 5px;
 }
+
+@media screen and (max-width: 520px){
+  .social-media-section {
+    max-width: none;
+    margin-right: 12px !important;
+    margin-left: 12px !important; 
+    .platforms {
+      .platform-item {
+        width: 45%;
+      }
+    }
+  }
+}
 </style>

@@ -7,6 +7,9 @@ export default defineConfig((mode) => {
     define: {
       'process.env': env
     },
+    css: [
+      "@theme/style/var.css"
+    ],
     resolve: {
       alias: {
         '@theme': path.resolve(__dirname, '.vitepress/theme')

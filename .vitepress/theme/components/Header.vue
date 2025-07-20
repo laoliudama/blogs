@@ -2,16 +2,16 @@
   <div class="header">
     <div class="container">
       <div class="header-left">
-        <img alt="User Avatar" src="../../public/zqq.jpg" class="user-avatar" />
+        <img alt="User Avatar" src="../../public/lyn-avatar.jpg" class="user-avatar" />
         <div class="user-info">
-          <h1>刘亚男</h1>
+          <label>刘亚男</label>
         </div>
       </div>
       <nav class="header-nav">
-        <span :class="['nav-item','iconfont','icon-shouye']">首页</span>
-        <span :class="['nav-item','iconfont','icon-16']" @click="toAtricle">文章</span>
-        <span :class="['nav-item','iconfont','icon-ruanjian']">我的软件</span>
-        <span :class="['nav-item','iconfont','icon-guanyuwomen-02']">关于我</span>
+        <span :class="['nav-item', 'iconfont', 'icon-shouye']">首页</span>
+        <span v-if="!isMobileDevice()" :class="['nav-item', 'iconfont', 'icon-16']" @click="toAtricle">文章</span>
+        <span :class="['nav-item', 'iconfont', 'icon-ruanjian']">我的软件</span>
+        <span :class="['nav-item', 'iconfont', 'icon-guanyuwomen-02']">关于我</span>
 
       </nav>
     </div>
@@ -19,14 +19,16 @@
 </template>
 
 <script setup>
+import { isMobileDevice } from "@theme/common/utils";
 const base = import.meta.env.VITE_ASSETS
 function toAtricle() {
-  window.location.href = base + "/pages/main.html"
+  window.location.href = (base ? 'https://laoliudama.github.io' : '') + base + "/pages/main.html"
 }
 </script>
 
 <style scoped>
 @import "../../public/iconfont/iconfont.css";
+
 .header {
   background: #111827;
   color: white;
@@ -54,7 +56,7 @@ function toAtricle() {
   margin-right: 8px;
 }
 
-.user-info h1 {
+.user-info label {
   font-size: 24px;
   margin: 0;
 }
@@ -67,5 +69,31 @@ function toAtricle() {
   color: white;
   margin-left: 20px;
   text-decoration: none;
+}
+
+@media screen and (max-width: 520px) {
+  .header {
+    padding: 16px 12px;
+  }
+
+  .icon-16 {
+    display: none;
+  }
+
+  .header-nav .nav-item {
+    margin-left: 8px;
+    font-size: 17px;
+  }
+
+  .user-info label {
+    font-size: 21px;
+    margin: 0;
+  }
+
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
 }
 </style>

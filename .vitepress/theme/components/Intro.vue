@@ -3,7 +3,7 @@
     <div class="profile">
       <div class="title">
         <span class="iconfont icon-coding" :style="{ 'font-size': titleFont + 'px' }"></span>
-        <div :style="{ 'font-size': titleFont + 'px', 'white-space': 'nowrap' }">--老刘在打码--</div>
+        <div class="tilte-text" :style="{ 'font-size': titleFont + 'px', 'white-space': 'nowrap' }">--老刘在打码--</div>
         <span class="iconfont icon-coding" :style="{ 'font-size': titleFont + 'px' }"></span>
       </div>
       <div class="tags">
@@ -16,11 +16,11 @@
       <div class="services">
         <label class="service" v-for="(service, index) in services" :key="index">
           <span class="iconfont icon-huaduo" :style="{ 'font-size': serviceFont + 'px','padding-left' : '8px' }"></span>
-          <label class="tag-name" :style="{ 'font-size': serviceFont + 'px' }">{{ service }}</label>
+          <label class="tag-name service-name" :style="{ 'font-size': serviceFont + 'px' }">{{ service }}</label>
           <span class="iconfont icon-huaduo" :style="{ 'font-size': serviceFont + 'px' }"></span>
         </label>
       </div>
-      <img class="profile-image" src="../../public/zqq.jpg" alt="Profile Image">
+      <img class="profile-image" src="../../public/lyn-avatar.jpg" alt="Profile Image">
     </div>
 
   </div>
@@ -99,6 +99,34 @@ const serviceFont = ref(24)
       border-radius: 88px;
       border: 3px solid #9973f8;
     }
+  }
+}
+
+@media screen and (max-width:520px) {
+  .intro {
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .icon-coding {
+    font-size: 32px !important;
+  }
+  .tilte-text {
+    font-size: 32px !important;
+  }
+  .icon-yunduan {
+    font-size: 22px !important;
+  }
+  .tag-name {
+    font-size: 22px !important;
+  }
+  .icon-huaduo {
+    font-size: 18px !important;
+  }
+  .service-name {
+    font-size: 18px !important;
   }
 }
 </style>
