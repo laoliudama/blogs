@@ -1,0 +1,1148 @@
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>老刘在打码 - 我的软件作品</title>
+  <script src="https://res.gemcoder.com/js/reload.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6C5CE7',
+            secondary: '#0984E3',
+            dark: '#1A1A2E',
+            darker: '#121224',
+            light: '#F8F9FA',
+            accent: '#00F5D4'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+          .text-gradient {
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }
+          .card-hover {
+              transition: all 0.3s ease;
+          }
+          .card-hover:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+          }
+          .nav-item {
+              position: relative;
+          }
+          .nav-item::after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2px;
+              bottom: -4px;
+              left: 0;
+              background-color: #6C5CE7;
+              transition: width 0.3s ease;
+          }
+          .nav-item:hover::after,
+          .nav-item.active::after {
+              width: 100%;
+          }
+          .skill-tag {
+              transition: all 0.2s ease;
+          }
+          .skill-tag:hover {
+              transform: scale(1.05);
+              background-color: #6C5CE7;
+              color: white;
+          }
+          .timeline-item {
+              position: relative;
+          }
+          .timeline-item::before {
+              content: '';
+              position: absolute;
+              left: 24px;
+              top: 56px;
+              bottom: -30px;
+              width: 2px;
+              background-color: #3d3d5c;
+          }
+          .timeline-item:last-child::before {
+              display: none;
+          }
+      }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-darker to-dark text-gray-200 min-h-screen font-sans">
+  <!-- 导航栏 -->
+  <nav class="sticky top-0 z-50 bg-dark/80 shadow-md transition-all duration-300">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <a class="text-primary hover:text-primary/80 transition-colors" href="javascript:history.back();">
+          <i class="block md:hidden fas fa-arrow-left text-2xl text-white"> </i>
+        </a>
+        <div class="flex items-center space-x-2">
+          <h1 class="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-accent text-gradient">
+            我的软件
+          </h1>
+        </div>
+      </div>
+      <!-- 移动端菜单 -->
+      <div class="md:hidden hidden bg-gray-800 shadow-lg absolute w-full" id="mobileMenu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+          <a class="text-gray-300 hover:text-white py-2 transition-colors" href="#experience">
+            个人经历
+          </a>
+          <a class="text-gray-300 hover:text-white py-2 transition-colors" href="#certificates">
+            我的证书
+          </a>
+          <a class="text-gray-300 hover:text-white py-2 transition-colors" href="#footprints">
+            我的足迹
+          </a>
+        </div>
+      </div>
+  </nav>
+  <!-- 主要内容 -->
+  <main class="container mx-auto px-4 pt-20 pb-16">
+    <!-- 页面标题区域 -->
+    <section class="mb-16 text-center">
+      <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold mb-4">
+        <span class="bg-gradient-to-r from-primary to-accent text-gradient">
+          我的软件作品
+        </span>
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        以下是我开发的软件项目，按时间倒序排列。每个项目都包含详细的技术栈和功能介绍。
+      </p>
+    </section>
+    <!-- 软件时间轴区域 -->
+    <section class="max-w-4xl mx-auto">
+      <!-- 2023年项目 -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+          <i class="fas fa-calendar-alt text-primary"> </i>
+          2014年
+        </h2>
+        <!-- 项目1 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class=" md:block md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-primary flex items-center justify-center z-10 shadow-lg shadow-primary/30">
+                <i class="fas fa-desktop text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/xsxxglxtj.jfif" alt="学生管理系统" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-primary/30 flex-shrink-0">
+                      <img
+                        src="https://design.gemcoder.com/staticResource/echoAiSystemImages/cf22c6d7ff06ca1e5bf4f58c9a154b70.png"
+                        alt="学生管理系统" class="w-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">学生管理系统（毕设）</h3>
+                      <p class="text-gray-400 text-sm">2014年8月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    系统针对学校学生信息的特点以及管理中实际需要而设计，能够有效地实现学生信息管理的信息化，支持学生档案管理、成绩录入和考勤记录。减轻管理人员的工作负担，高效率、规范化地管理大量的学生信息，帮助教务人员高效管理学生信息。
+
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Sevlet
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        JSP
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        HTML
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        MySQL
+                      </span>
+
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fas fa-desktop text-primary"> </i>
+                        <span> PC </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 项目2 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center z-10 shadow-lg shadow-secondary/30">
+                <i class="fas fa-mobile-alt text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/paczyjt.png" alt="平安财酷应用截图" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-secondary/30 flex-shrink-0">
+                      <img src="./resources/imgs/paczy.png" alt="平安财酷图标" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">平安财智云</h3>
+                      <p class="text-gray-400 text-sm">2014年11月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    平安财智云是中国平安保险集团开发的财务类移动应用软件，具备差旅管控、电子发票管理、移动审批等核心功能。该软件提供PC端与移动端的协同服务平台，基于平安集团在金融领域的实践经验，形成了覆盖企业报销全流程的解决方案。
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Object-C
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        HTML
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        JS
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        CSS
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Jenkins
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-apple text-secondary text-lg"> </i>
+                        <span> iOS </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-android text-secondary text-lg"> </i>
+                        <span> Android </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目3 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center z-10 shadow-lg shadow-secondary/30">
+                <i class="fas fa-mobile-alt text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/czy.png" alt="财智云" class="w-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-purple-500/30 flex-shrink-0">
+                      <img
+                        src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/16/e0/3b/16e03b00-27ca-042a-8bed-e0cb626024fe/AppIcon-1x_U007emarketing-0-8-0-0-85-220-0.png/434x0w.webp"
+                        alt="财智云" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">财智云</h3>
+                      <p class="text-gray-400 text-sm">2014年11月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    财智云企业版是平安壹钱包旗下创新产品，通过提供员工福利、商旅出行、企业采购以及成本管理等一站式企业消费管理综合解决方案 ，助力企业降本增效，实现消费管理数字化升级。
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Object-C
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        HTML
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        JS
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        CSS
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Jenkins
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-apple text-secondary text-lg"> </i>
+                        <span> iOS </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-android text-secondary text-lg"> </i>
+                        <span> Android </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2016年项目 -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+          <i class="fas fa-calendar-alt text-primary"> </i>
+          2016年
+        </h2>
+
+        <!-- 项目5 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center z-10 shadow-lg shadow-green-500/30">
+                <i class="fas fa-mobile-alt text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/zsxyjt.png" alt="掌上校园" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                      <img src="./resources/imgs/zsxy.jpg" alt="掌上校园" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">掌上校园</h3>
+                      <p class="text-gray-400 text-sm">2016年5月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    掌上校园是为了配合数字化校园而开发的一款移动APP，用户分为老师、学生两个角色，把课表、考勤、课件、测验、作业、课堂总结、调查问卷、公告通知等功能集成进来，实现了与教务、OA等系统的互联。目的是辅助老师教学，促进学生学习。
+
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Object-C
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Jenkins
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Vue
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Node.js
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Express
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Nginx
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-apple text-secondary text-lg"> </i>
+                        <span> iOS </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-android text-secondary text-lg"> </i>
+                        <span> Android </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目5 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center z-10 shadow-lg shadow-green-500/30">
+                <i class="fas fa-mobile-alt text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/kczljt.png" alt="科创-知了" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                      <img src="./resources/imgs/kczl.webp" alt="科创-知了" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">科创-知了</h3>
+                      <p class="text-gray-400 text-sm">2017年9月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    科创知了是深圳科创职业技术学校为在校学生开发的一款定制版在线学习app，学生通过手机可随时随地查看课件、在线测试、记录学习日志，边学边练，提高学习效率，强化学习成果，将任何闲暇时光都可以变为有趣的汲取知识新体验！
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Object-C
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Jenkins
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Vue
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Node.js
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Express
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Nginx
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-apple text-secondary text-lg"> </i>
+                        <span> iOS </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-android text-secondary text-lg"> </i>
+                        <span> Android </span>
+                      </span>
+
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目6 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center z-10 shadow-lgshadow-green-500/30">
+                <i class="fab fa-weixin text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:p-2">
+                  <img src="./resources/imgs/fdzxpsxqjt.jpg" alt="奋达职校坪山校区" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                      <img src="./resources/imgs/zsxy.jpg" alt="奋达职校坪山校区" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">奋达职校坪山校区</h3>
+                      <p class="text-gray-400 text-sm">2019年5月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    一款专为职校招生设计的微信小程序，支持在线报名、资料提交和录取查询。提供专业介绍、校园风光展示和招生咨询功能，帮助学生便捷完成报名流程。
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Uniapp
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Node.js
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        MySQL
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        阿里云
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-weixin text-secondary text-lg"> </i>
+                        <span> 微信 </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 项目7 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center z-10 shadow-lgshadow-green-500/30">
+                <div>
+                  <i class="fas fa-mobile-alt text-white text-xl"> </i><i class="fab fa-weixin text-white text-xl"> </i>
+                </div>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:p-2">
+                  <img src="./resources/imgs/dxyjt.png" alt="抖学院" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                      <img src="./resources/imgs/dxy.png" alt="抖学院" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">抖学院</h3>
+                      <p class="text-gray-400 text-sm">2019年5月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    抖学院是一款非常简单轻量级的在线学习软件，带给你不同的教学模式进行参与，为学生提供了丰富的课程资源。这些课程涵盖校本课程资源和课外课程资源支持体验，课程中心推送精品课程栏目，展示日常生活。生活中常用的技能和技能，如图标和标志设计、电脑办公和网页设计等丰富的专业知识。
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Object-C
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Jenkins
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Vue
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Node.js
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Express
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Nginx
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Uniapp
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        MySQL
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        阿里云
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-apple text-secondary text-lg"> </i>
+                        <span> iOS </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-android text-secondary text-lg"> </i>
+                        <span> Android </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-weixin text-secondary text-lg"> </i>
+                        <span> 微信 </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2021年项目 -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+          <i class="fas fa-calendar-alt text-primary"> </i>
+          2021年
+        </h2>
+        <!-- 项目8 -->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center z-10 shadow-lg shadow-green-500/30">
+                <i class="fas fa-mobile-alt text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/hwqyfwjt.png" alt="华为企业服务" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                      <img src="./resources/imgs/hwqyfw.webp" alt="华为企业服务" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">华为企业服务</h3>
+                      <p class="text-gray-400 text-sm">2021年11月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    为华为企业用户提供服务和技术支持的官方应用。管理产品部件；查看产品文档、案例、视频等资料;扫描华为条码获取部件信息、产品资料，查询设备维保；现场服务支持；申请备件；在社区与同行一起定义华为产品；查看软件申请单进展；AI智能问答；在线客服答疑等等，一切尽在华为企业服务。
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Object-C
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Jenkins
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Vue
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Node.js
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Shell
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Nginx
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4 flex-wrap">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-apple text-secondary text-lg"> </i>
+                        <span> iOS </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-android text-secondary text-lg"> </i>
+                        <span> Android </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-harmony text-secondary text-lg"> </i>
+                        <span> 鸿蒙 </span>
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+          <i class="fas fa-calendar-alt text-primary"> </i>
+          其他
+        </h2>
+
+        <!-- 项目7-->
+        <div class="md:timeline-item mb-12">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- 时间轴标记 -->
+            <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+              <div
+                class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center z-10 shadow-lg shadow-green-500/30">
+                <i class="fas fa-desktop text-white text-xl"> </i>
+              </div>
+            </div>
+            <!-- 项目内容 -->
+            <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+              <div class="md:flex md:items-center">
+                <!-- 应用截图 -->
+                <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                  <img src="./resources/imgs/eday.png" alt="Everyday about you" class="w-full md:h-full object-cover" />
+                </div>
+                <!-- 应用信息 -->
+                <div class="md:w-3/5 p-6">
+                  <div class="flex items-center gap-4 mb-4">
+                    <!-- 应用图标 -->
+                    <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                      <img src="./resources/imgs/LOVE@1x.png" alt="Everyday about you"
+                        class="w-full h-full object-cover" />
+                    </div>
+                    <!-- 应用名称和日期 -->
+                    <div>
+                      <h3 class="text-2xl font-bold">Everyday about you</h3>
+                      <p class="text-gray-400 text-sm">2022年7月</p>
+                    </div>
+                  </div>
+                  <!-- 应用描述 -->
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    Everyday about you一款谷歌浏览器插件，在新标签页中显示一个搜索框，并不断地弹出不同颜色的爱心。
+                  </p>
+                  <!-- 技术栈 -->
+                  <div>
+                    <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Node.js
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        HTML5
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        CSS3
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        JavaScript
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Chrome Extension API
+                      </span>
+                      <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                        Manifest V3
+                      </span>
+                    </div>
+                  </div>
+                  <!-- 支持设备 -->
+                  <div class="mt-6">
+                    <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                    <div class="flex items-center gap-4">
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-chrome text-green-500"> </i>
+                        <span> Chrome </span>
+                      </span>
+                      <span class="flex items-center gap-1 text-gray-300">
+                        <i class="fab fa-edge text-blue-500"> </i>
+                        <span> Edge </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 项目8 -->
+          <div class="md:timeline-item mb-12">
+            <div class="flex flex-col md:flex-row gap-6">
+              <!-- 时间轴标记 -->
+              <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+                <div
+                  class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center z-10 shadow-lg shadow-green-500/30">
+                  <i class="fas fa-desktop text-white text-xl"> </i>
+                </div>
+              </div>
+              <!-- 项目内容 -->
+              <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                <div class="md:flex md:items-center">
+                  <!-- 应用截图 -->
+                  <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:pl-2">
+                    <img src="./resources/imgs/npmrunscript-snipaste1.jpg" alt="npm run script" class="w-full md:h-full object-cover" />
+                  </div>
+                  <!-- 应用信息 -->
+                  <div class="md:w-3/5 p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                      <!-- 应用图标 -->
+                      <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                        <img src="./resources/imgs/icon-run-script.png" alt="npm run script" class="w-full h-full object-cover" />
+                      </div>
+                      <!-- 应用名称和日期 -->
+                      <div>
+                        <h3 class="text-2xl font-bold">npm run script</h3>
+                        <p class="text-gray-400 text-sm">2024年6月</p>
+                      </div>
+                    </div>
+                    <!-- 应用描述 -->
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                      一款VSCode插件，支持快速运行package.json中的npm
+                      scripts。提供可视化界面展示所有脚本，一键运行、停止和查看输出，支持自定义命令和快捷键配置，大幅提升前端开发效率。
+                  
+                    </p>
+                    <!-- 技术栈 -->
+                    <div>
+                      <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                      <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          HTML5
+                        </span>
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          CSS3
+                        </span>
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          JavaScript
+                        </span>
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          VSCode Extension API
+                        </span>
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          Node.js
+                        </span>
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          npm
+                        </span>
+
+                      </div>
+                    </div>
+                    <!-- 支持设备 -->
+                    <div class="mt-6">
+                      <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                      <div class="flex items-center gap-4 flex-wrap">
+                        <span class="flex items-center gap-1 text-gray-300">
+                          <i class="fab fa-windows text-blue-400"> </i>
+                          <span> Windows </span>
+                        </span>
+                        <span class="flex items-center gap-1 text-gray-300">
+                          <i class="fab fa-apple text-blue-400"> </i>
+                          <span> macOS </span>
+                        </span>
+                        <span class="flex items-center gap-1 text-gray-300">
+                          <i class="fab fa-linux text-blue-400"> </i>
+                          <span> Linux </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 项目9 -->
+          <div class="md:timeline-item mb-12">
+            <div class="flex flex-col md:flex-row gap-6">
+              <!-- 时间轴标记 -->
+              <div class="md:w-16 flex justify-center md:justify-start mb-4 md:mb-0">
+                <div
+                  class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center z-10 shadow-lgshadow-green-500/30">
+                  <i class="fas fa-desktop text-white text-xl"> </i>
+                </div>
+              </div>
+              <!-- 项目内容 -->
+              <div class="md:flex-1 bg-dark/50 border border-gray-800 rounded-xl overflow-hidden card-hover">
+                <div class="md:flex md:items-center">
+                  <!-- 应用截图 -->
+                  <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden md:p-2">
+                    <img src="./resources/imgs/zwtp.png" alt="qr-img" class="w-full md:h-full object-cover" />
+                  </div>
+                  <!-- 应用信息 -->
+                  <div class="md:w-3/5 p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                      <!-- 应用图标 -->
+                      <div class="w-16 h-16 rounded-xl overflow-hidden border-2 border-green-500/30 flex-shrink-0">
+                        <img src="./resources/imgs/zwtp.png" alt="qr-img" class="w-full h-full object-cover" />
+                      </div>
+                      <!-- 应用名称和日期 -->
+                      <div>
+                        <h3 class="text-2xl font-bold">qr-img</h3>
+                        <p class="text-gray-400 text-sm">2025年6月</p>
+                      </div>
+                    </div>
+                    <!-- 应用描述 -->
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                      qr-img是一个简单且快速的命令行工具，可以用于生成二维码，并在图片浏览器上即时预览。
+                    </p>
+                    <!-- 技术栈 -->
+                    <div>
+                      <h4 class="text-gray-400 text-sm mb-3">使用技术:</h4>
+                      <div class="flex flex-wrap gap-2">
+                        
+                        <span class="skill-tag bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          Node.js
+                        </span>
+                        
+                        
+                      </div>
+                    </div>
+                    <!-- 支持设备 -->
+                    <div class="mt-6">
+                      <h4 class="text-gray-400 text-sm mb-3">支持设备:</h4>
+                      <div class="flex items-center gap-4 flex-wrap">
+
+                        <span class="flex items-center gap-1 text-gray-300">
+                          <i class="fab fa-windows text-blue-400"> </i>
+                          <span> Windows </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+    </section>
+    <!-- 项目统计 -->
+    <section class="mb-16">
+      <div class="bg-dark/50 border border-gray-800 rounded-xl p-8">
+        <h2 class="text-2xl font-bold mb-8 text-center">项目统计</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="p-6 bg-darker/50 rounded-lg border border-gray-800">
+            <div class="text-4xl font-bold text-primary mb-2">11+</div>
+            <div class="text-gray-400">完成项目</div>
+          </div>
+          <div class="p-6 bg-darker/50 rounded-lg border border-gray-800">
+            <div class="text-4xl font-bold text-secondary mb-2">7</div>
+            <div class="text-gray-400">移动应用</div>
+          </div>
+          <div class="p-6 bg-darker/50 rounded-lg border border-gray-800">
+            <div class="text-4xl font-bold text-purple-500 mb-2">3</div>
+            <div class="text-gray-400">桌面应用</div>
+          </div>
+          <div class="p-6 bg-darker/50 rounded-lg border border-gray-800">
+            <div class="text-4xl font-bold text-accent mb-2">10+</div>
+            <div class="text-gray-400">使用技术</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- 页脚 -->
+  <footer class="bg-darker border-t border-gray-800 py-10">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-code text-primary text-xl"> </i>
+          <h2 class="text-xl font-bold bg-gradient-to-r from-primary to-accent text-gradient">
+            老刘在打码
+          </h2>
+        </div>
+        <div class="text-gray-500 text-sm">
+          © 2025 老刘在打码. 保留所有权利.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- 返回顶部按钮 -->
+  <button id="backToTop"
+    class="fixed bottom-8 right-8 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+    <i class="fas fa-arrow-up"> </i>
+  </button>
+  <script>
+    // 页面加载时初始化
+    document.addEventListener('DOMContentLoaded', function () {
+      // 移动端菜单切换
+      var menuBtn = document.getElementById('menuBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+        var icon = menuBtn.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        }
+      });
+
+      // 返回顶部按钮
+      var backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove('opacity-0', 'invisible');
+          backToTopBtn.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopBtn.classList.remove('opacity-100', 'visible');
+          backToTopBtn.classList.add('opacity-0', 'invisible');
+        }
+      });
+      backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+
+            // 如果是移动端菜单点击，关闭菜单
+            if (!mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              var icon = menuBtn.querySelector('i');
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        });
+      });
+
+      // 为项目卡片添加动画效果
+      var animateOnScroll = function animateOnScroll() {
+        var cards = document.querySelectorAll('.card-hover');
+        cards.forEach(function (card) {
+          var cardTop = card.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+          if (cardTop < windowHeight * 0.85) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // 初始化卡片样式
+      document.querySelectorAll('.card-hover').forEach(function (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+
+      // 初始检查和滚动监听
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+
+</html>

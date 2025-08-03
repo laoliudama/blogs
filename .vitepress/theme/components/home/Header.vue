@@ -2,16 +2,16 @@
   <div class="header">
     <div class="container">
       <div class="header-left">
-        <img alt="User Avatar" src="../../public/lyn-avatar.jpg" class="user-avatar" />
+        <img alt="User Avatar" :src="avatar" class="user-avatar" />
         <div class="user-info">
           <label>刘亚男</label>
         </div>
       </div>
       <nav class="header-nav">
-        <span :class="['nav-item', 'iconfont', 'icon-shouye']">首页</span>
-        <span v-if="!isMobileDevice()" :class="['nav-item', 'iconfont', 'icon-16']" @click="toAtricle">文章</span>
-        <span :class="['nav-item', 'iconfont', 'icon-ruanjian']">我的软件</span>
-        <span :class="['nav-item', 'iconfont', 'icon-guanyuwomen-02']">关于我</span>
+        <span :class="['nav-item', 'iconfont', 'icon-shouye' ,'click-able']">首页</span>
+        <span v-if="!isMobileDevice()" :class="['nav-item', 'iconfont', 'icon-16','click-able']" @click="toAtricle">文章</span>
+        <span :class="['nav-item', 'iconfont', 'icon-ruanjian','click-able']" @click="toMySoftware">我的软件</span>
+        <span :class="['nav-item', 'iconfont', 'icon-guanyuwomen-02','click-able']" @click="toAboutMe">关于我</span>
 
       </nav>
     </div>
@@ -20,14 +20,30 @@
 
 <script setup>
 import { isMobileDevice } from "@theme/common/utils";
+import avatar from '@res/lyn-avatar.jpg'
+import { defineEmits } from "vue";
+
+const emit = defineEmits(["toMySoftware", "toAboutMe", "toAtricle"]);
+
 const base = import.meta.env.VITE_ASSETS
+
+function toMySoftware() {
+  emit("toMySoftware");
+  window.location.href = (base ? 'https://laoliudama.github.io' : '') + base + "/my-software.html"
+}
+
+function toAboutMe() {
+  emit
+  window.location.href = (base ? 'https://laoliudama.github.io' : '') + base + "/about-me.html"
+}
 function toAtricle() {
+  emit("toAtricle");
   window.location.href = (base ? 'https://laoliudama.github.io' : '') + base + "/pages/main.html"
 }
 </script>
 
 <style scoped>
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 
 .header {
   background: #111827;
@@ -71,7 +87,11 @@ function toAtricle() {
   text-decoration: none;
 }
 
-@media screen and (max-width: 520px) {
+.header-nav .click-able {
+  color: #7f96f2;
+  cursor: pointer;
+}
+@media screen and (min-width: 375px) and (max-width: 520px) {
   .header {
     padding: 16px 12px;
   }
@@ -94,6 +114,20 @@ function toAtricle() {
     width: 28px;
     height: 28px;
   }
+}
 
+@media screen and (max-width: 375px) {
+  .header {
+    padding: 16px 10px;
+  }
+  .header-nav .nav-item {
+    margin-left: 8px;
+    font-size: 15px;
+  }
+
+  .user-info label {
+    font-size: 18px;
+    margin: 0;
+  }
 }
 </style>

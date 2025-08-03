@@ -1,9 +1,10 @@
 // .vitepress/theme/index.js
 import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
+import NavBar from "./components/navbar/NavBar.vue";
 
 export default {
-  extends:DefaultTheme,
+  extends: DefaultTheme,
   // root component to wrap each page
   Layout,
 
@@ -14,6 +15,7 @@ export default {
     // app is the Vue 3 app instance from `createApp()`.
     // router is VitePress' custom router. `siteData` is
     // a `ref` of current site-level metadata.
+    app.component('NavBar', NavBar);
   },
 
   setup() {

@@ -9,6 +9,7 @@
     "docs:preview": "npx vitepress preview"
   },
   "devDependencies": {
+    "@vitejs/plugin-legacy": "^7.1.0",
     "sass-embedded": "^1.89.2"
   }
 }

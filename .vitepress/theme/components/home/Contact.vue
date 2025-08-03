@@ -57,7 +57,7 @@ const contactItems = ref([
 </script>
 
 <style scoped lang="scss">
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 
 .contact-section {
   position: relative;
@@ -114,16 +114,22 @@ const contactItems = ref([
     }
   }
 
+  .contact-item:hover {
+    transform: scale(1);
+  }
+
   .contact-items {
     display: flex;
     column-gap: 2px;
     row-gap: 16px;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
     .contact-item {
       margin: 0 0px;
-      width:45%;
+      width: 45%;
     }
+
     .contact-item p {
       font-size: 15px;
     }

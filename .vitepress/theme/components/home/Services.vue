@@ -68,7 +68,7 @@ const services = ref([
 </script>
 
 <style scoped lang="scss">
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 
 .services {
   .services-title {

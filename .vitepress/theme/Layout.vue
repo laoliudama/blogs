@@ -4,6 +4,12 @@
   <div v-if="page.frontmatter.layout === 'home'">
     <Home />
   </div>
+  <div v-else-if="page.frontmatter.layout === 'aboutme'">
+    <AboutMe />
+  </div>
+  <div v-else-if="page.frontmatter.layout === 'mysoftware'">
+    <MySoftware />
+  </div>
    <div v-else> 
     <Layout>
       <Content />
@@ -15,6 +21,8 @@
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import Home from "./pages/Home.vue"
+import AboutMe from './pages/AboutMe.vue'
+import MySoftware from './pages/MySoftware.vue'
 
 const { Layout } = DefaultTheme
 const pageData = useData()

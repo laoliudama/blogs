@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-left">
         <div class="footer-info-box">
-          <img alt="User Avatar" src="../../public/lyn-avatar.jpg" class="user-avatar" />
+          <img alt="User Avatar" :src="avatar" class="user-avatar" />
           <div class="user-name">老刘在打码</div>
         </div>
         <div class="footer-info">
@@ -26,7 +26,7 @@
       </div>
       <div class="footer-right">
         <label class="wx iconfont icon-xinxi">微信联系</label>
-        <img src="../../public/wx-qrcode.jpg" alt="WeChat QR Code" class="wechat-qrcode" />
+        <img :src="wxQrcode" alt="WeChat QR Code" class="wechat-qrcode" />
         <label>扫码添加</label>
       </div>
     </div>
@@ -37,6 +37,8 @@
 
 import { ref } from 'vue'
 import { isMobileDevice } from "@theme/common/utils";
+import avatar from '@res/lyn-avatar.jpg'
+import wxQrcode from '@res/wx-qrcode.jpg';
 
 const isMobile = ref(isMobileDevice());
 
@@ -44,7 +46,7 @@ const isMobile = ref(isMobileDevice());
 </script>
 
 <style scoped lang="scss">
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 
 .footer {
   background-color: #2228;

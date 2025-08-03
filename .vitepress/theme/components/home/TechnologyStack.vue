@@ -36,7 +36,7 @@ const technologyStack = ref([
 </script>
 
 <style lang="scss" scoped>
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 .technology-stack {
   line-height: normal;
   .technology-stack-title{

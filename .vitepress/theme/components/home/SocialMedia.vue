@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { nextTick, onMounted, ref } from "vue";
 
 const socialMedia = ref()
 const platformsInfo = ref([
@@ -24,26 +24,28 @@ const platformsInfo = ref([
   { name: '抖音', icon: 'icon-douyin1', followers: '22' },
 ])
 
-onMounted(() => {   
-  const contactItems = document.querySelectorAll('.contact-item')
-  let rightItem = null
-  contactItems.forEach(item => { 
-    if (!rightItem) {
-      rightItem = item
-    } else {
-      if (item.offsetLeft > rightItem.offsetLeft) {
+onMounted(() => {
+  nextTick(() => {
+    const contactItems = document.querySelectorAll('.contact-item')
+    let rightItem = null
+    contactItems.forEach(item => {
+      if (!rightItem) {
         rightItem = item
+      } else {
+        if (item.offsetLeft > rightItem.offsetLeft) {
+          rightItem = item
+        }
       }
-    }
+    })
+    const marginRigh = socialMedia.value.offsetWidth - rightItem.offsetLeft - rightItem.offsetWidth
+    socialMedia.value.style.marginRight = marginRigh + 'px'
   })
-  const marginRigh = socialMedia.value.offsetWidth - rightItem.offsetLeft - rightItem.offsetWidth
-  socialMedia.value.style.marginRight = marginRigh + 'px'
 })
 
 </script>
 
 <style scoped lang="scss">
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 
 .social-media-section {
   padding: 20px;
@@ -78,11 +80,12 @@ onMounted(() => {
   margin-bottom: 5px;
 }
 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 520px) {
   .social-media-section {
     max-width: none;
     margin-right: 12px !important;
-    margin-left: 12px !important; 
+    margin-left: 12px !important;
+
     .platforms {
       .platform-item {
         width: 45%;

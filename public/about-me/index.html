@@ -1,0 +1,666 @@
+<html lang="zh-CN" class="overflow-x-hidden">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>关于我</title>
+  <script src="../resource/js/reload.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="./webfonts/font-awesome-6.4.0-all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#10B981',
+            accent: '#8B5CF6',
+            dark: '#1E293B',
+            light: '#F8FAFC'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+          .content-auto {
+              content-visibility: auto;
+          }
+          .timeline-line {
+              @apply absolute left-5 top-0 h-full w-0.5 bg-primary/20;
+          }
+          .timeline-dot {
+              @apply absolute left-5 top-3 w-3 h-3 rounded-full bg-primary -translate-x-1/2 border-2 border-white shadow-md;
+          }
+          .card-hover {
+              @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+          }
+          .text-gradient {
+            background: -webkit-linear-gradient(#6C5CE7, #0984E3);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+      }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- 导航栏 -->
+  <nav class="sticky top-0 z-50 bg-gray-800 shadow-md transition-all duration-300">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <a class="text-primary hover:text-primary/80 transition-colors" href="javascript:history.back();">
+          <i class="block md:hidden fas fa-arrow-left text-2xl text-white"> </i>
+        </a>
+        <div class="flex items-center space-x-2">
+          <h1 class="text-xl md:text-2xl font-bold from-primary to-accent text-gradient">
+            我的软件
+          </h1>
+        </div>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a class="text-gray-300 hover:text-white transition-colors" href="#experience">
+          个人经历
+        </a>
+        <a class="text-gray-300 hover:text-white transition-colors" href="#certificates">
+          我的证书
+        </a>
+        <a class="text-gray-300 hover:text-white transition-colors" href="#footprints">
+          我的足迹
+        </a>
+      </div>
+      <button class="md:hidden text-gray-300 focus:outline-none" id="menuToggle">
+        <i class="fas fa-bars text-xl"> </i>
+      </button>
+    </div>
+    <!-- 移动端菜单 -->
+    <div class="md:hidden hidden bg-gray-800 shadow-lg absolute w-full" id="mobileMenu">
+      <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <a class="text-gray-300 hover:text-white py-2 transition-colors" href="#experience">
+          个人经历
+        </a>
+        <a class="text-gray-300 hover:text-white py-2 transition-colors" href="#certificates">
+          我的证书
+        </a>
+        <a class="text-gray-300 hover:text-white py-2 transition-colors" href="#footprints">
+          我的足迹
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- 头部区域 -->
+  <header class="bg-gradient-to-r from-primary to-accent text-white py-16 md:py-24">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/3 mb-8 md:mb-0">
+        <div class="relative">
+          <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto">
+            <img alt="个人头像" class="w-full h-full object-cover" src="../resource/imgs/lyn-avatar.jpg" />
+          </div>
+          <div
+            class="absolute -bottom-3 -right-3 bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+            <i class="fas fa-check text-lg"> </i>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-2/3 text-center md:text-left md:pl-12">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          你好，我是刘亚男
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-6">
+          全栈开发工程师 & 终身学习者
+        </p>
+        <p class="text-lg text-white/80 max-w-2xl mx-auto md:mx-0">
+          热爱技术，致力于创造优雅且高效的用户体验。喜欢探索新技术，分享知识，记录生活中的每一个精彩瞬间。
+        </p>
+
+      </div>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-12">
+    <!-- 个人经历部分 -->
+    <section class="mb-20" id="experience">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white inline-block relative">
+          个人经历
+          <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full">
+          </span>
+        </h2>
+        <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+          记录了我从大学到职场的成长历程，每一步都是宝贵的人生财富
+        </p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <!-- 大学生活 -->
+        <div class="mb-16">
+          <div class="flex items-center mb-8">
+            <div class="bg-primary/10 p-3 rounded-full mr-4">
+              <i class="fas fa-university text-primary text-2xl"> </i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">大学生活</h3>
+          </div>
+          <div class="relative pl-12">
+            <div class="timeline-line"></div>
+            <!-- 时间线项目1 -->
+            <div class="relative mb-10">
+              <div class="timeline-dot"></div>
+              <div class="bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="text-xl font-semibold text-white">
+                    软件开发专业
+                  </h4>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                    2010.09 - 2024.06
+                  </span>
+                </div>
+                <p class="text-gray-100 mb-3">江西农业大学</p>
+                <p class="text-gray-200">
+                  主修课程包括数据结构、算法分析、计算机网络、操作系统等课程，专业成绩排名前10%。在校期间，积极参加各种编程活动，并取得不错的成绩。同时还积极参加各种学校的社团，在担任学院团委办公室副主任，协助学院举办各种活动，得到了学院领导极大的好评，在担任花卉协会的宣传部部长的，策划了多次活动，参与人数超过100人次，提升了校园氛围。获得学院优秀学生干部称号，学院奖学金六次。
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    协会干部
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    团委干部
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- 时间线项目2 -->
+            <div class="relative mb-10">
+              <div class="timeline-dot"></div>
+              <div class="bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="text-xl font-semibold text-white">
+                    前端开发实习
+                  </h4>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                    2013-11 - 2014.07
+                  </span>
+                </div>
+                <p class="text-gray-100 mb-3">昆特科技</p>
+                <p class="text-gray-200">
+                  参与公司官网优化，主要负责优化页面的加载，使用jquery框架开发，优化页面加载速度提升40%。，实习结束后获得转正邀请。
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm">
+                    JS/HTML/CSS
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    jQuery.js
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 工作经历 -->
+        <div>
+          <div class="flex items-center mb-8">
+            <div class="bg-secondary/10 p-3 rounded-full mr-4">
+              <i class="fas fa-briefcase text-secondary text-2xl"> </i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">工作经历</h3>
+          </div>
+          <div class="relative pl-12">
+            <div class="timeline-line" style="background-color: rgba(16, 185, 129, 0.2);"></div>
+            <!-- 时间线项目1 -->
+            <div class="relative mb-10">
+              <div class="timeline-dot" style="background-color: #10B981;"></div>
+              <div class="bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="text-xl font-semibold text-white">
+                    iOS开发工程师
+                  </h4>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    2015.11 - 2017.05
+                  </span>
+                </div>
+                <p class="text-gray-100 mb-3">文思海辉</p>
+                <p class="text-gray-200">
+                <p>1、参与需求分析，产品模块的概要和详细设计</p>
+                <p>2、负责开发和维护iPhone的应用，并将应用上架到App Store</p>
+                <p>3、根据公司要求书写相应的技术文档</p>
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm">
+                    OC
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    JS/HTML/CSS
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    jQuery
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- 时间线项目2 -->
+            <div class="relative mb-10">
+              <div class="timeline-dot" style="background-color: #10B981;"></div>
+              <div class="bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="text-xl font-semibold text-white">
+                    iOS开发工程师
+                  </h4>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    2017.05 - 2021.10
+                  </span>
+                </div>
+                <p class="text-gray-100 mb-3">职联教育科技有限公司</p>
+                <p class="text-gray-200">
+                <p>1、负责系统的iOS的功能的规划，开发，测试以及上架</p>
+                <p>2、负责系统小程序/公众号功能的规划，开发以及发布</p>
+                <p>3、根据需要书写相应的技术文挡</p>
+                <p>4、负责为系统引入新技术的</p>
+                <p>5、负责部分功能需求的分析、整理</p>
+                <p>6、负责与后台以及安卓等协同开发</p>
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm">
+                    OC
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Node.js
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    JS/HTML/CSS
+                  </span>
+
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    uniapp
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="timeline-dot" style="background-color: #10B981;"></div>
+              <div class="bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="text-xl font-semibold text-white">
+                    iOS/前端开发工程师
+                  </h4>
+                  <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    2021.11 - 至今
+                  </span>
+                </div>
+                <p class="text-gray-100 mb-3">易宝/软通</p>
+                <p class="text-gray-200">
+                <p>工作内容</p>
+                <p>1、负责iOS项目中各类Bug的修复，确保系统稳定性和用户体验的持续提升</p>
+                <p>2、参与新功能模块的需求分析，负责H5的开发工作，确保功能实现符合预期要求</p>
+                <p>3、参与项目需求讨论，提供项目设计建议，确保项目质量</p>
+                <p>4、维护项目测试环境的正常运行，确保测试工作的顺利进行</p>
+                <p>5、协助后台定位问题，参与后台与其他系统的联调，确保数据流通和系统间的无缝协作</p>
+                <p>工作业绩</p>
+                <p>1、在支持一线工程师方面表现卓越，快速响应需求，所在部门荣获优秀团队称号。</p>
+                <p>2、优化iOS自动化流程，开发效率提升2%。</p>
+                <p>3、重构前端开发部署流程，从原来的10分钟缩短至2-3分钟。</p>
+                <p class="break-words">
+                  4、在开发过程中，发现VSCode的插件不足，开发插件，插件链接：https://marketplace.visualstudio.com/items?itemName=liuyanan.npm-run-script&ssr=false#review-details。
+                </p>
+                <p>5、成功改造应用的外网访问方式，由域名访问改为使用Mag网关访问。</p>
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm">
+                    OC
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Node.js
+                  </span>
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    JS/HTML/CSS
+                  </span>
+
+                  <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    uniapp
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 我的证书部分 -->
+    <section class="mb-20" id="certificates">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white inline-block relative">
+          职业资格证书
+          <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full">
+          </span>
+        </h2>
+        <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+          通过不断学习和努力获得的专业认证，见证我的成长之路
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- 证书1 -->
+        <div class="bg-gray-800 rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="overflow-hidden">
+            <img alt="计算机资格证书" class="w-full object-cover" src="../resource/imgs/zyzg_content.webp" />
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold text-white">
+                计算机技术与软件专业技术资格-网络工程师
+              </h3>
+              <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium">
+                2012.12
+              </span>
+            </div>
+            <p class="text-gray-300 mb-4">
+              该考试由 国家人力资源和社会保障部、工业和信息化部联合主办，是计算机领域唯一的国家级职业资格考试，证书全国通用且中日韩互认。该证书证明持有者具备较强的计算机应用能力和专业知识。
+            </p>
+            <div class="flex items-center text-gray-400 text-sm">
+              <i class="fas fa-award text-yellow-500 mr-2"> </i>
+              <span> 人力资源和社会保障部、工业和信息化部 </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="overflow-hidden">
+            <img alt="计算机资格证书" class="w-full object-cover" src="../resource/imgs/zyzg_content.webp" />
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold text-white">
+                计算机技术与软件专业技术资格-数据库系统工程师
+              </h3>
+              <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium">
+                2013.05
+              </span>
+            </div>
+            <p class="text-gray-300 mb-4">
+              该考试由 国家人力资源和社会保障部、工业和信息化部联合主办，是计算机领域唯一的国家级职业资格考试，证书全国通用且中日韩互认。该证书证明持有者具备较强的计算机应用能力和专业知识。
+            </p>
+            <div class="flex items-center text-gray-400 text-sm">
+              <i class="fas fa-award text-yellow-500 mr-2"> </i>
+              <span>人力资源和社会保障部、工业和信息化部 </span>
+            </div>
+          </div>
+        </div>
+        <!-- 证书3 -->
+        <div class="bg-gray-800 rounded-xl shadow-md overflow-hidden card-hover">
+          <div class="overflow-hidden">
+            <img alt="注册安全工程师" class="w-full object-cover" src="../resource/imgs/zcaqgcs.jfif" />
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-semibold">注册安全工程师(中级)</h3>
+              <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium">
+                2024.10
+              </span>
+            </div>
+            <p class="text-gray-300 mb-4">
+              注册安全工程师证书被列入《国家职业资格目录》，是36项准入类资格证书之一。
+            </p>
+            <div class="flex items-center text-gray-500 text-sm">
+              <i class="fas fa-award text-yellow-500 mr-2"> </i>
+              <span> 应急管理部、人力资源和社会保障部 </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- 我的足迹部分 -->
+    <section class="mb-20" id="footprints">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white inline-block relative">
+          我的足迹
+          <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full">
+          </span>
+        </h2>
+        <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+          走过的路，看过的风景，每一个地方都留下了美好的回忆
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto">
+        <!-- 足迹1 -->
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20">
+              <img alt="上海" class="w-full h-full object-cover" src="../resource/imgs/byjnb.webp" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-1">南昌</h3>
+            <p class="text-gray-400 mb-3">2010.09 - 2013.07</p>
+            <p class="text-gray-300">
+              本科大学所在地，经历三年艰苦的学习，完成学业，获得本科毕业证书。还游览了滕王阁，南昌大学等些景点。
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-gray-200 px-2 py-1 rounded text-xs">
+                求学
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                人文风光
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                自然风光
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 足迹2 -->
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20">
+              <img alt="北京" class="w-full h-full object-cover" src="../resource/imgs/tamcl.jpg" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-1">北京</h3>
+            <p class="text-gray-400 mb-3">2014.08 - 2014.11</p>
+            <p class="text-gray-300">
+              大学实训，参观了清华大学、北京大学等知名高校，游览了故宫、长城等名胜古迹。
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-gray-200 px-2 py-1 rounded text-xs">
+                实训
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                高校参观
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                文化体验
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- 足迹3 -->
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20">
+              <img alt="深圳" class="w-full h-full object-cover" src="../resource/imgs/pajrzx.jpg" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-1">深圳</h3>
+            <p class="text-gray-400 mb-3">2014.11 - </p>
+            <p class="text-gray-300">
+              毕业后，到深圳实习，并一直在深圳工作。参观了世界之窗，也游玩了大小梅沙，体验了码头人家的美食。
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-gray-200 px-2 py-1 rounded text-xs">
+                工作所在地
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                文化体验
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- 足迹4 -->
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20">
+              <img alt="广西" class="w-full h-full object-cover" src="../resource/imgs/xbs.png" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-1">桂林</h3>
+            <p class="text-gray-400 mb-3">2020.01 - 2020.01</p>
+            <p class="text-gray-300">
+              公司组织的活，体验了一把一叶竹排泛游漓江的感觉，也亲眼看到了人民币上的景色，并体验了一下阳朔西街的繁荣。
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-gray-200 px-2 py-1 rounded text-xs">
+                公司活动
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                自然风光
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                文化体验
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- 足迹5 -->
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20">
+              <img alt="杭州" class="w-full h-full object-cover" src="../resource/imgs/lft.jpeg" />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-1">杭州</h3>
+            <p class="text-gray-400 mb-3">2021.04 - 2021.04</p>
+            <p class="text-gray-300">
+              参加技术交流活动，参观了阿里巴巴总部，游览了西湖、灵隐寺等著名景点，体验了杭州的自然风光。
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="bg-gray-700 text-gray-200 px-2 py-1 rounded text-xs">
+                技术培训
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                企业参观
+              </span>
+              <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                自然风光
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <!-- 页脚 -->
+  <footer class="bg-darker border-t border-gray-800 py-10">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-code text-primary text-xl"> </i>
+          <h2 class="text-xl font-bold bg-gradient-to-r from-primary to-accent text-gradient">
+            老刘在打码
+          </h2>
+        </div>
+
+        <div class="text-gray-500 text-sm">
+          © 2025 老刘在打码. 保留所有权利.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- 返回顶部按钮 -->
+  <button
+    class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90"
+    id="backToTop">
+    <i class="fas fa-arrow-up"> </i>
+  </button>
+  <script>
+    // 页面加载时初始化
+    document.addEventListener('DOMContentLoaded', function () {
+      // 移动端菜单切换
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileMenu = document.getElementById('mobileMenu');
+      menuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // 点击移动端菜单项后关闭菜单
+      var mobileMenuItems = mobileMenu.querySelectorAll('a');
+      mobileMenuItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          var targetId = this.getAttribute('href');
+          var targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // 返回顶部按钮
+      var backToTopButton = document.getElementById('backToTop');
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopButton.classList.remove('opacity-100', 'visible');
+          backToTopButton.classList.add('opacity-0', 'invisible');
+        }
+
+        // 导航栏滚动效果
+      });
+      backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // 为卡片添加进入动画
+      var animateOnScroll = function animateOnScroll() {
+        var elements = document.querySelectorAll('.card-hover');
+        elements.forEach(function (element) {
+          var elementPosition = element.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+          if (elementPosition < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // 初始设置
+      document.querySelectorAll('.card-hover').forEach(function (element) {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+
+      // 初始检查
+      animateOnScroll();
+
+      // 滚动时检查
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+
+</html>

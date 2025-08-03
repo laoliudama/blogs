@@ -20,7 +20,7 @@
           <span class="iconfont icon-huaduo" :style="{ 'font-size': serviceFont + 'px' }"></span>
         </label>
       </div>
-      <img class="profile-image" src="../../public/lyn-avatar.jpg" alt="Profile Image">
+      <img class="profile-image" :src="avator" alt="Profile Image">
     </div>
 
   </div>
@@ -28,6 +28,7 @@
 
 <script setup>
 import { ref } from "vue";
+import avator from '@res/lyn-avatar.jpg'
 const tags = ref([
   '资深开发',
   '兼职开发'
@@ -42,7 +43,7 @@ const serviceFont = ref(24)
 </script>
 
 <style scoped lang="scss">
-@import "../../public/iconfont/iconfont.css";
+@import "../../../public/iconfont/iconfont.css";
 
 .intro {
   display: flex;
